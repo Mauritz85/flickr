@@ -1,0 +1,24 @@
+form{
+    margin: 5px
+}
+
+#amount-input {
+    width: 3em;
+  }
+  
+#text-input{
+    width: 30.8rem;
+    margin: 10px;
+    margin-top: 0;
+}
+#green-box{
+    width: 3rem;
+    height: 3rem;
+    background-color: green;
+    align-self: center;
+}
+
+img{
+    margin: 5px;
+}
+

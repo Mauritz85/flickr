@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="anime.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div id="green-box"></div>
+    <h3>Search for any Flickr image below</h3>
+
+    <form action="">
+        Keyword: <input id="text-input" type="text">
+        <button id="search-button">Search</button><br>
+        Image size: <select id="size-input">
+            <option value="w">Small</option>
+            <option value="z">Medium</option>
+            <option value="b">Large</option>
+        </select>
+        Sort by: <select id="sort-input">
+            <option value="date-posted-desc">Date decending</option>
+            <option value="date-posted-asc">Date ascending</option>
+            <option value="relevance">Most relevant</option>
+            <option value="interestingness-desc">Highest "interestingness"</option>
+        </select>
+        Number of images: <input id="amount-input" value='10' type="number" min="1" max="99" inputmode="numeric">
+    </form>
+ 
+
+    <div id="search-result-div">
+    </div>
+</body>
+</html>
