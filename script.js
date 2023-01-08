@@ -14,6 +14,7 @@ const searchAnimation = anime({
     borderRadius: '50%',
     easing: 'easeInOutQuad',
     autoplay: false,
+    loop: true,
     direction: 'alternate'
 
 });
@@ -55,7 +56,12 @@ function showImages(flickrData) {
         errorNothingFound()
     }
 
+
     else {
+        if (flickrData.photos.total < amountInput.value){
+            amountInput.value = flickrData.photos.total
+            errorLesserImagesFound()
+        }
         for (let i = 0; i < amountInput.value; i++) {
             imgElement[i] = document.createElement('img')
             imgElement[i].src = 'https://live.staticflickr.com/' + flickrData.photos.photo[i].server + '/' + flickrData.photos.photo[i].id + '_' + flickrData.photos.photo[i].secret + '_' + sizeInput.value + '.jpg'
@@ -67,19 +73,26 @@ function showImages(flickrData) {
 }
 
 function errorAlertTextInput() {
-    alert("Keyword can't be blank");
+    alert("Keyword can't be blank.");
     location.reload()
 }
+
 function errorAlertAmountInput() {
-    alert("Number of images has to be a number between 1 and 99");
+    alert("Number of images has to be a number between 1 and 99.");
     location.reload()
 }
+
 function errorNothingFound() {
-    alert("Nothing found. Try another keyword");
+    alert("Nothing found. Try another keyword.");
     location.reload()
 }
+
 function errorFetchFailed() {
     alert("Error. Data not available.");
     location.reload()
+}
+
+function errorLesserImagesFound(){
+    alert("Sorry. We couldn't find the requested number of images to match your keyword. All available matching images are shown instead.");
 }
 
